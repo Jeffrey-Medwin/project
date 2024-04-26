@@ -1,1 +1,1 @@
-# project
+# outlier-mini-project
