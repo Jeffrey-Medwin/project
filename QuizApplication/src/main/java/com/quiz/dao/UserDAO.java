@@ -39,6 +39,7 @@ public class UserDAO {
 			System.out.println(userName);
 			System.out.println(password);
 			
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			connection = DriverManager.getConnection(url, userName, password);
 			System.out.println("got con");
 			if (connection != null) {
@@ -49,6 +50,9 @@ public class UserDAO {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return connection;
